@@ -2,6 +2,8 @@ using Flux, Statistics, Random, MLUtils, Images, FileIO, ProgressMeter, Optimise
 using Flux: onehotbatch, onecold
 using Printf
 
+Random.seed!(42)  # Set random seed for reproducibility
+
 # 1. Safe LeNet-5 with output clamping
 function OriginalLeNet5(input_channels=1, output_size=10)
     Chain(
@@ -110,7 +112,7 @@ function train_model(model, train_loader, val_loader; epochs=10)
 end
 
 # 6. Main training pipeline
-function train_and_evaluate(dataset_path; k=10, epochs=10, batchsize=16)
+function train_and_evaluate(dataset_path; k=10, epochs=30, batchsize=32)
     try
         (X, y), categories = load_dataset(dataset_path)
         n_samples = size(X, 4)
@@ -179,4 +181,4 @@ end
 
 # Run with reduced parameters initially
 dataset_path = "C:\\Assignments\\DeepLearning\\ReplicatePaperAssignment\\hb74ynkjcn-5"
-results = train_and_evaluate(dataset_path, k=10, epochs=10, batchsize=16)
+results = train_and_evaluate(dataset_path, k=10, epochs=30, batchsize=32) 
