@@ -2,6 +2,10 @@ using Flux, Statistics, Random, MLUtils, Images, FileIO, ProgressMeter, Optimise
 using Flux: onehotbatch, onecold
 using Printf
 
+# Note: Dataset has to be downloaded from https://data.mendeley.com/datasets/hb74ynkjcn/1  
+# and unzip it to current working directory
+
+
 Random.seed!(42)  # Set random seed for reproducibility
 
 # 1. Safe LeNet-5 with output clamping
