@@ -184,5 +184,6 @@ function accuracy(model, loader)
 end
 
 # Run with reduced parameters initially
-dataset_path = "C:\\Assignments\\DeepLearning\\ReplicatePaperAssignment\\hb74ynkjcn-5"
+#dataset_path = "C:\\Assignments\\DeepLearning\\ReplicatePaperAssignment\\hb74ynkjcn-5"
+dataset_path = ".\\hb74ynkjcn-5"
 results = train_and_evaluate(dataset_path, k=10, epochs=30, batchsize=32) 
